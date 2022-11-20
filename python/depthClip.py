@@ -23,7 +23,7 @@ def lerp(x, y, t):
 def ComputeSampleDepthClip(fPrevDepth, fPrevDepthBilinearWeight, \
                            fCurrentDepthViewSpace, renderSize):
     fPrevDepthViewSpace = abs(ConvertFromDeviceToViewSpace(fPrevDepth))
-    fHalfViewportWidth = renderSize[0] * 0.5
+    fHalfViewportWidth = renderSize[1] * 0.5
     fDepthThreshold = min(fCurrentDepthViewSpace, fPrevDepthViewSpace)
     Ksep = 1.37e-5
     fRequireDepthSeparation = Ksep * fDepthThreshold * fHalfViewportWidth * fTanHalfFOV
@@ -89,6 +89,8 @@ def func_depthClip(recon_prev_depth, dilated_depth, dilated_mv, renderSize):
     for i in range(renderSize[0]):
         for j in range(renderSize[1]):
             print(i, j)
+            # if i == 100 and j == 100:
+            #     print("")
             func_compute_ij(recon_prev_depth, dilated_depth, dilated_mv, [i, j], \
                  renderSize, deptClipImage)
     return deptClipImage

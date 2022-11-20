@@ -1,0 +1,4 @@
+Metadata-Version: 2.1
+Name: reconstructPrevDepth-cuda
+Version: 0.0.0
+Summary: cuda implement of fsr reconstructPrevDepth
