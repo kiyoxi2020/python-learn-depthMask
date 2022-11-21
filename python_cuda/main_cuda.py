@@ -3,7 +3,7 @@ import os
 from reconstructPrevDepth_py import func_reconstructPrevDepth
 # from depthClip import func_depthClip
 from utils import read_exr, write_exr
-
+# os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
 def main():
     data_path = "../data/dump1/"
